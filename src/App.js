@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import Store from './Store/Store';
 import Header from './HeaderFooter/Header';
+import RouteSwitch from './RouteSwitch';
+import Home from './Home';
 
 function App() {
+
+  const [cart,setCart] = useState([])
+
+  const addItem = (name) => {
+      setCart(...cart, name)
+      console.log("works")
+  }
+
   return (
     <div className="App">
+      <RouteSwitch add = { addItem} quantity = {cart.length}/>
     </div>
   );
 }
