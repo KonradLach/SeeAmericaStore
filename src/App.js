@@ -9,13 +9,13 @@ function App() {
   const [cart,setCart] = useState([])
 
   const addItem = (name) => {
-      setCart(...cart, name)
-      console.log("works")
+      setCart([...cart, name])
+      console.log(cart)
   }
 
   return (
     <div className="App">
-      <RouteSwitch add = { addItem} quantity = {cart.length}/>
+      <RouteSwitch add = { addItem} quantity = {cart}/>
     </div>
   );
 }

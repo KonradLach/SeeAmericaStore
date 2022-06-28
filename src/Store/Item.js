@@ -1,7 +1,7 @@
 import React from "react";
-const Item = ({src, name,desc,cost, add}) => {
+const Item = ({add, name, src, cost, desc}) => {
   const handleChange = () => {
-    add(name);
+    add({name});
   }
     return (
       <div className="item-wrapper">
