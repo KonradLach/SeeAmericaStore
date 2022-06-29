@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import Header from './HeaderFooter/Header';
 import RouteSwitch from './RouteSwitch';
@@ -12,7 +12,10 @@ function App() {
       setCart([...cart, name])
       console.log(cart)
   }
+  useEffect(() => {
+    let quantity= cart.length;
 
+  },[cart])
   return (
     <div className="App">
       <RouteSwitch add = { addItem} quantity = {cart}/>

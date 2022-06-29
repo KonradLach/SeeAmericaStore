@@ -1,7 +1,7 @@
 import React from "react";
 const Item = ({add, name, src, cost, desc}) => {
-  const handleChange = () => {
-    add({name});
+  const handleChange = (event) => {
+    add(event.currentTarget.id);
   }
     return (
       <div className="item-wrapper">
@@ -9,7 +9,7 @@ const Item = ({add, name, src, cost, desc}) => {
         <div className="item-name">{name}</div>
         <div className="item-des">Item Description: {desc}</div>
         <div className="item-cost">Cost: ${cost}</div>
-        <button onClick={handleChange}>Add to Cart</button>
+        <button id={name} onClick={handleChange}>Add to Cart</button>
       </div>
     );
   };

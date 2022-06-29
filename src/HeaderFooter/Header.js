@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 
-const Header = ( props ) => {
+const Header = ( {quantity} ) => {
+
     
     return (
         <div className="header-wrapper">
@@ -12,7 +13,7 @@ const Header = ( props ) => {
                 <Link to="/store">Store</Link>
             </li>
             <li>
-                <Link to="/checkout">Cart: {props.quantity}</Link>
+                <Link to="/checkout" key={quantity}>Cart: {quantity.length}</Link>
             </li>
 
         </div>
