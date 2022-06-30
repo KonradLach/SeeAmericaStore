@@ -12,13 +12,10 @@ function App() {
       setCart([...cart, name])
       console.log(cart)
   }
-  useEffect(() => {
-    let quantity= cart.length;
 
-  },[cart])
   return (
     <div className="App">
-      <RouteSwitch add = { addItem} quantity = {cart}/>
+      <RouteSwitch add = { addItem} cart = {cart}/>
     </div>
   );
 }

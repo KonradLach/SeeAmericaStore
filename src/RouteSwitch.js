@@ -3,14 +3,16 @@ import App from "./App";
 import Store from "./Store/Store";
 import Header from "./HeaderFooter/Header";
 import Home from "./Home";
+import Checkout from "./Store/Checkout";
 
-const RouteSwitch = ({add, quantity}) => {
+const RouteSwitch = ({add, cart}) => {
   return (
     <BrowserRouter>
-    <Header quantity={quantity}/>
+    <Header quantity={cart}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/store" element={<Store add = {add} />} />
+        <Route path="/checkout" element={<Checkout add={add} cart={cart}/>}/>
       </Routes>
     </BrowserRouter>
   );
