@@ -5,14 +5,14 @@ import Header from "./HeaderFooter/Header";
 import Home from "./Home";
 import Checkout from "./Store/Checkout";
 
-const RouteSwitch = ({add, cart}) => {
+const RouteSwitch = ({add, cart, remove}) => {
   return (
     <BrowserRouter>
     <Header quantity={cart}/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/store" element={<Store add = {add} />} />
-        <Route path="/checkout" element={<Checkout add={add} cart={cart}/>}/>
+        <Route path="/store" element={<Store add = {add} remove={remove} />} />
+        <Route path="/checkout" element={<Checkout add={add} remove={remove} cart={cart}/>}/>
       </Routes>
     </BrowserRouter>
   );
